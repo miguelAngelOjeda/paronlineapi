@@ -32,6 +32,7 @@ public class ApplicationConfig extends Application {
         resources.add(paronlineapi.service.CategoriaFacadeREST.class);
         resources.add(paronlineapi.service.ClienteFacadeREST.class);
         resources.add(paronlineapi.service.ProductoFacadeREST.class);
+        resources.add(paronlineapi.service.TransaccionFacadeREST.class);
     }
     
 }

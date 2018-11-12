@@ -71,6 +71,26 @@ public abstract class AbstractFacade<T> {
         }
 
     }
+    
+    public List<T> findClienteTransaccion(String clave, String modo) {
+        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
+        cq.select(cq.from(entityClass));
+        javax.persistence.Query q = getEntityManager().createQuery(cq);
+        q.setParameter("idCliente", modo);
+        //q.setFirstResult(range[0]);
+        return q.getResultList();
+//        EntityManager em = getEntityManager();
+//        try {
+//            List<T> resultado = em.createNamedQuery("TransaccionesCab.findByIdCliente")
+//                    .setParameter("idCliente", modo)
+//                    //.setParameter("modo", modo)
+//                    .getResultList();
+//            return resultado;
+//        } finally {
+//            em.close();
+//        }
+
+    }
 
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
