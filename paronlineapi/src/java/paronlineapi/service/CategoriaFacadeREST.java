@@ -88,7 +88,7 @@ public class CategoriaFacadeREST extends AbstractFacade<Categoria> {
 
     @Override
     protected EntityManager getEntityManager() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("CategoriaFacadeRESTPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("paronlineapiPU");
         EntityManager em = emf.createEntityManager();
         if (em == null) {
             throw new IllegalStateException("EntityManager no esta seteado");

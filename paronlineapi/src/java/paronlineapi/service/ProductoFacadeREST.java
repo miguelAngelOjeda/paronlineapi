@@ -86,7 +86,7 @@ public class ProductoFacadeREST extends AbstractFacade<Producto> {
 
     @Override
     protected EntityManager getEntityManager() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProductoFacadeRESTPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("paronlineapiPU");
         EntityManager em = emf.createEntityManager();
         if (em == null) {
             throw new IllegalStateException("EntityManager no esta seteado");

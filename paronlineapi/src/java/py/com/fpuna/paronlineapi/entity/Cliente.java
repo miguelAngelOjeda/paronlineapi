@@ -48,10 +48,10 @@ public class Cliente implements Serializable {
     private Integer idCliente;
     @Basic(optional = false)
     @Column(name = "nombre", nullable = false)
-    private Serializable nombre;
+    private String nombre;
     @Basic(optional = false)
     @Column(name = "apellido", nullable = false)
-    private Serializable apellido;
+    private String apellido;
     @Basic(optional = false)
     @Column(name = "email", nullable = false, length = 200)
     private String email;
@@ -64,8 +64,8 @@ public class Cliente implements Serializable {
     @Basic(optional = false)
     @Column(name = "tipo_cliente", nullable = false)
     private int tipoCliente;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente", fetch = FetchType.LAZY)
-    private List<TransaccionesCab> transaccionesCabList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCliente", fetch = FetchType.LAZY)
+//    private List<TransaccionesCab> transaccionesCabList;
 
     public Cliente() {
     }
@@ -74,7 +74,7 @@ public class Cliente implements Serializable {
         this.idCliente = idCliente;
     }
 
-    public Cliente(Integer idCliente, Serializable nombre, Serializable apellido, String email, String loginName, String passwd, int tipoCliente) {
+    public Cliente(Integer idCliente, String nombre, String apellido, String email, String loginName, String passwd, int tipoCliente) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -96,7 +96,7 @@ public class Cliente implements Serializable {
         return nombre;
     }
 
-    public void setNombre(Serializable nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -104,7 +104,7 @@ public class Cliente implements Serializable {
         return apellido;
     }
 
-    public void setApellido(Serializable apellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
@@ -140,14 +140,14 @@ public class Cliente implements Serializable {
         this.tipoCliente = tipoCliente;
     }
 
-    @XmlTransient
-    public List<TransaccionesCab> getTransaccionesCabList() {
-        return transaccionesCabList;
-    }
-
-    public void setTransaccionesCabList(List<TransaccionesCab> transaccionesCabList) {
-        this.transaccionesCabList = transaccionesCabList;
-    }
+//    @XmlTransient
+//    public List<TransaccionesCab> getTransaccionesCabList() {
+//        return transaccionesCabList;
+//    }
+//
+//    public void setTransaccionesCabList(List<TransaccionesCab> transaccionesCabList) {
+//        this.transaccionesCabList = transaccionesCabList;
+//    }
 
     @Override
     public int hashCode() {

@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(paronlineapi.service.CategoriaFacadeREST.class);
+        resources.add(paronlineapi.service.ClienteFacadeREST.class);
         resources.add(paronlineapi.service.ProductoFacadeREST.class);
     }
     

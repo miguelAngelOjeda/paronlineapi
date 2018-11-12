@@ -56,6 +56,21 @@ public abstract class AbstractFacade<T> {
         q.setFirstResult(range[0]);
         return q.getResultList();
     }
+    
+    public T findLogin(String clave, String modo) {
+
+        EntityManager em = getEntityManager();
+        try {
+            T resultado = (T) em.createNamedQuery("Cliente.findByLoginName")
+                    .setParameter("loginName", modo)
+                    //.setParameter("modo", modo)
+                    .getSingleResult();
+            return resultado;
+        } finally {
+            em.close();
+        }
+
+    }
 
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
